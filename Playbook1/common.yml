@@ -1,6 +1,7 @@
-name: This play installs wireshark
-hosts: webservers, nfs, db
-become: yes
-tasks:
+---
+- name: installs wireshark
+  become: yes
+  hosts: all
+  tasks:
     - debug:
-       vars: ansible_facts
+        var: ansible_facts 
