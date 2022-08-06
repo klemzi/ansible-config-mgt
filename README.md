@@ -1,2 +1,2 @@
 # ansible-config-mgt
-All my ansible scripts.
+All my ansible projects.
