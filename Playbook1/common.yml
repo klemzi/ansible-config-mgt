@@ -1,0 +1,13 @@
+---
+- name: installs wireshark
+  become: yes
+  hosts: all
+  tasks:
+    - block:
+        - name: ensure wireshark is at the latest version
+          apt: name=wireshark state=latest update_cache=yes
+      when: ansible_facts.distribution == "Ubuntu"
+    - block:
+        - name: ensure wireshark is at the latest version
+          yum: name=wireshark state=latest update_cache=yes
+      when: ansible_facts.distribution == "RedHat"
