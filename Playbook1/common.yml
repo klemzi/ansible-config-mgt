@@ -4,15 +4,10 @@
   hosts: all
   tasks:
     - block:
-        - name: update pat repo
-          apt:
-            update_cache: yes
         - name: ensure wireshark is at the latest version
-          apt: name=wireshark state=latest
+          apt: name=wireshark state=latest update_cache=yes
       when: ansible_facts.distribution == "Ubuntu"
     - block:
         - name: ensure wireshark is at the latest version
-          yum: name=wireshark state=latest
+          yum: name=wireshark state=latest update_cache=yes
       when: ansible_facts.distribution == "RedHat"
-
-      
