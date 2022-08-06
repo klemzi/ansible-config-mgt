@@ -1,5 +1,5 @@
 ---
-- name: installs wireshark
+- name: installs wireshark on all servers
   become: yes
   hosts: all
   tasks:
