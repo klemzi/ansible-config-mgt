@@ -1,7 +1,7 @@
 ---
 - name: installs wireshark on all servers
   become: yes
-  hosts: all
+  hosts: all_dev
   tasks:
     - name: ensure wireshark is at the latest version
       apt: name=wireshark state=latest update_cache=yes

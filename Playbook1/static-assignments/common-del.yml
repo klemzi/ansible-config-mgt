@@ -1,6 +1,6 @@
 - name: removes wireshark
   become: yes
-  hosts: all
+  hosts: all_dev
   tasks:
     - name: remove whireshark (RedHat)
       yum: name=wireshark state=removed
