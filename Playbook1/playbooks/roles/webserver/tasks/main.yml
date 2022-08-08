@@ -1,2 +1,34 @@
 ---
 # tasks file for webserver
+- name: install Apache (httpd) and git
+  become: true
+  yum:
+    name: 
+      - httpd
+      - git
+    state: present
+
+- name: clone tooling repo
+  become: true
+  git:
+    repo: https://github.com/klemzi/tooling.git
+    dest: /var/www/html
+    force: yes
+
+- name: copy html contents to /var/www
+  copy:
+    src: /var/www/html/html
+    dest: /var/www/
+    remote_src: yes
+
+- name: start httpd service
+  become: true
+  service:
+    name: httpd
+    state: started
+    enabled: yes
+
+- name: recursively remove existing html directory
+  become: true
+  path: /var/www/html/html
+  state: absent
