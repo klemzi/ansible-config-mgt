@@ -1,0 +1,13 @@
+- name: removes wireshark
+  hosts: all
+  tasks:
+    - name: remove whireshark (RedHat)
+      yum: name=wireshark state=removed
+      when: ansible_facts.distribution == "RedHat"
+    - name: remove whireshark (Ubuntu)
+      apt:
+        name: wireshark
+        state: absent
+        purge: yes
+        autoclean: yes
+      when: ansible_facts.distribution == "Ubuntu"
