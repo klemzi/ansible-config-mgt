@@ -31,5 +31,6 @@
 
 - name: recursively remove existing html directory
   become: true
-  path: /var/www/html/html
-  state: absent
+  file:
+    path: /var/www/html/html
+    state: absent
