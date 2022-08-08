@@ -16,6 +16,7 @@
     force: yes
 
 - name: copy html contents to /var/www
+  become: true
   copy:
     src: /var/www/html/html
     dest: /var/www/
