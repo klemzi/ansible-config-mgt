@@ -1,4 +1,5 @@
 - name: removes wireshark
+  become: yes
   hosts: all
   tasks:
     - name: remove whireshark (RedHat)
