@@ -6,7 +6,7 @@
 - name: Include dynamic variables
   hosts: uat-webservers
   pre_tasks: 
-    - include_task: ../dynamic-assignments/env-vars.yml
+    - include_tasks: ../dynamic-assignments/env-vars.yml
   tasks:
     - debug: 
         msg: "need lb: {{ load_balancer_is_required }}"
