@@ -4,8 +4,8 @@
 
 ---
 - name: Include dynamic variables
-  hosts: uat-webservers
-  pre_tasks: 
+  hosts: uat
+  pre_tasks:
     - include_tasks: ../dynamic-assignments/env-vars.yml
   tasks:
     - debug: 
