@@ -1,2 +1,0 @@
-load_balancer_is_required: true
-enable_httpd_lb: true
