@@ -1,6 +1,6 @@
 ---
-- name: run on all hosts
-  import_playbook: ../static-assignments/common.yml
+#- name: run on all hosts
+#  import_playbook: ../static-assignments/common.yml
 
 
 - name: Include dynamic variables
