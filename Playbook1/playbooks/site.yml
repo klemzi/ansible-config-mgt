@@ -2,7 +2,7 @@
 - name: run on all hosts
   import_playbook: ../static-assignments/common.yml
 
----
+
 - name: Include dynamic variables
   hosts: uat
   pre_tasks:
@@ -15,6 +15,6 @@
       import_tasks: ../static-assignments/loadbalancers.yml
       when: load_balancer_is_required
 
----
+
 - name: Webserver assignments
   import_playbook: ../static-assignments/uat-webservers.yml
