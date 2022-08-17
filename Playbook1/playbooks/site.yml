@@ -11,7 +11,7 @@
     - debug: 
         msg: "need lb: {{ enable_apache_lb }}"
     - name: Loadblalancers assignment
-      include_tasks: ../static-assignments/loadbalancers.yml
+      import_tasks: ../static-assignments/loadbalancers.yml
       vars:
         load_balancer_is_required: "{{ load_balancer_is_required }}"
         enable_apache_lb: "{{ enable_apache_lb }}"
