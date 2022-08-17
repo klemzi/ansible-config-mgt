@@ -1,4 +1,7 @@
-- name: Loadblalancers assignment
-  roles:
-    - { role: nginx, when: enable_nginx_lb and load_balancer_is_required }
-    - { role: apache, when: enable_apache_lb and load_balancer_is_required }
+---
+- include_role: 
+  name: nginx
+  when: enable_nginx_lb and load_balancer_is_required
+- include_role:
+  name: apache
+  when: enable_apache_lb and load_balancer_is_required

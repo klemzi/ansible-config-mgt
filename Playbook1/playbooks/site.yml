@@ -9,7 +9,7 @@
     - include_tasks: ../dynamic-assignments/env-vars.yml
   tasks:
     - debug: 
-        msg: "need lb: {{ load_balancer_is_required }}"
+        msg: "need lb: {{ enable_apache_lb }}"
     - name: Loadblalancers assignment
       include_tasks: ../static-assignments/loadbalancers.yml
       when: load_balancer_is_required
