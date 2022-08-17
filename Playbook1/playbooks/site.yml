@@ -12,6 +12,10 @@
         msg: "need lb: {{ enable_apache_lb }}"
     - name: Loadblalancer assignment
       import_playbook: ../static-assignments/loadbalancers.yml
+      vars:
+        load_balancer_is_required: true
+        enable_apache_lb: true
+        enable_nginx_lb: false
       when: load_balancer_is_required
 
 

@@ -1,6 +1,9 @@
 ---
-- name: nginx and apache role
-  hosts: uat
-  roles:
-    - { role: nginx, when: enable_nginx_lb and load_balancer_is_required }
-    - { role: apache, when: enable_apache_lb and load_balancer_is_required }
+- name: install nginx lb
+  import_role:
+    name: nginx
+  when: enable_nginx_lb and load_balancer_is_required
+- name: install apache lb
+  import_role:
+    name: apache
+  when: enable_apache_lb and load_balancer_is_required
