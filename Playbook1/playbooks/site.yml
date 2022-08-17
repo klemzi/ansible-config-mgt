@@ -16,5 +16,5 @@
       when: load_balancer_is_required
 
 
-- name: Webserver assignments
-  import_playbook: ../static-assignments/uat-webservers.yml
+#- name: Webserver assignments
+#  import_playbook: ../static-assignments/uat-webservers.yml
