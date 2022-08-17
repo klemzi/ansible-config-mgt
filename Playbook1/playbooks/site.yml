@@ -10,7 +10,7 @@
   tasks:
     - debug: 
         msg: "need lb: {{ enable_apache_lb }}"
-    - name: Loadblalancers assignment
+    - name: Loadblalancer assignment
       import_playbook: ../static-assignments/loadbalancers.yml
       when: load_balancer_is_required
 
