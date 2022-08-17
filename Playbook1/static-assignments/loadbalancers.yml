@@ -1,7 +1,9 @@
 ---
-- include_role: 
-  name: nginx
+- name: install nginx lb
+  include_role: 
+    name: nginx
   when: enable_nginx_lb and load_balancer_is_required
-- include_role:
-  name: apache
+- name: install apache lb
+  include_role:
+    name: apache
   when: enable_apache_lb and load_balancer_is_required
