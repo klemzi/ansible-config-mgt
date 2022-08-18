@@ -9,7 +9,7 @@
     - include_tasks: ../dynamic-assignments/env-vars.yml
   tasks:
     - debug: 
-        msg: "{{ inventory_file }}, need lb: {{ enable_apache_lb }}"
+        msg: "Inventory: {{ inventory_file | basename }}"
     - name: Loadblalancer assignment
       become: true
       import_tasks: ../static-assignments/loadbalancers.yml

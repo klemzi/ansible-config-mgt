@@ -3,7 +3,7 @@
   include_vars: "{{ item }}"
   with_first_found:
     - files:
-        - '{{ inventory_file }}.yml'
+        - "{{ inventory_file | basename }}.yml"
         - defaults.yml
       paths:
         - "{{ playbook_dir }}/../dynamic-assignments/env-vars"
