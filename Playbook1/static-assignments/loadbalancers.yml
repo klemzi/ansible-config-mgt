@@ -1,9 +1,9 @@
 ---
 - name: install nginx lb
-  include_role: 
+  import_role:
     name: nginx
   when: enable_nginx_lb and load_balancer_is_required
 - name: install apache lb
-  include_role:
+  import_role:
     name: apache
   when: enable_apache_lb and load_balancer_is_required

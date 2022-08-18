@@ -1,16 +1,17 @@
-#---
+---
 #- name: run on all hosts
 #  import_playbook: ../static-assignments/common.yml
 
----
+
 - name: Include dynamic variables
   hosts: uat
   pre_tasks:
     - include_tasks: ../dynamic-assignments/env-vars.yml
   tasks:
     - debug: 
-        msg: "need lb: {{ enable_apache_lb }}"
-    - name: Loadblalancers assignment
+        msg: "{{ inventory_file }}, need lb: {{ enable_apache_lb }}"
+    - name: Loadblalancer assignment
+      become: true
       import_tasks: ../static-assignments/loadbalancers.yml
       when: load_balancer_is_required
 
